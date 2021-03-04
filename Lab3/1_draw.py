@@ -5,7 +5,9 @@ pygame.init()
 def draw_backscreen(color):
     rect(screen, color, (0, 0, 400, 400))
 
-def draw_smileface(color x,y):
+def draw_smileface(color1,color2, x,y,radius,outline):
+    circle(screen, color1, (x, y), radius)#main
+    circle(screen, color2, (x, y), radius, outline)#outline
 FPS = 30
 screen = pygame.display.set_mode((400, 400))
 
@@ -15,10 +17,13 @@ black= (0,0,0)
 grey=(224,224,224)
 red=(255,0,0)
 draw_backscreen(grey)
+draw_smileface(yellow,black, 200,200,100,2)
+'''draw smileface
+circle(screen,yellow,(200,200),100)
+circle(screen,black,(200,200),100,2)'''
 
-#draw smileface
-circle(screen,yellow,(200,200),100,0)
-circle(screen,black,(200,200),100,2)
+
+
 #draw left eyebrows
 line(screen, black, (170,170), (90,130),10)
 #draw right eyebrows
