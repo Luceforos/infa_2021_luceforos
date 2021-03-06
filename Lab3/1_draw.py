@@ -6,8 +6,8 @@ FPS = 30
 screen = pygame.display.set_mode((400, 400))
 yellow = (255, 255, 0)
 black = (0, 0, 0)
-grey = (224, 224, 224)
-red = (255, 0, 0)
+grey = (224,224,224)
+red = (255,0,0)
 
 
 def draw_backscreen(color):
@@ -23,10 +23,10 @@ def draw_eyebrows(color, x1, y1, x2, y2, weight):
     line(screen, color, (x1, y1), (x2, y2), weight)
 
 
-def draw_eyes(color1, color2, color3,
-              x1, y1, x2, y2, x3, y3,
-              radius1, radius2, radius3,
-              outline):
+def draw_eyes(color1, x1, y1, radius1,
+              color2, x2, y2, radius2,outline,
+              color3, x3, y3, radius3,
+              ):
     circle(screen, color1, (x1, y1), radius1)
     circle(screen, color2, (x2, y2), radius2, outline)
     circle(screen, color3, (x3, y3), radius3)
@@ -40,14 +40,14 @@ draw_backscreen(grey)
 draw_smileface(yellow, black, 200, 200, 100, 2)
 draw_eyebrows(black, 170, 170, 90, 130, 10)  # left
 draw_eyebrows(black, 220, 170, 290, 140, 10)  # right
-draw_eyes(red, black, black,  # left
-          150, 200, 150, 200, 150, 200,
-          30, 30, 10,
-          3)
-draw_eyes(red, black, black,  # right
-          250, 200, 250, 200, 250, 200,
-          20, 20, 5,
-          3)
+draw_eyes(red, 150, 200, 30,     # left
+          black, 150, 200, 30,3,
+          black, 150, 200,  10,
+          )
+draw_eyes(red, 250, 200, 20,  # right
+          black, 250, 200, 20,3,
+          black,250, 200,  5,
+          )
 
 draw_mouth(black, 150, 260, 250, 260, 10)
 
